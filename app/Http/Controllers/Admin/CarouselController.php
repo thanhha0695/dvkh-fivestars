@@ -18,26 +18,26 @@ class CarouselController extends Controller
     public function index()
     {
       $carousels = Carousel::query()->get();
-      return view('content.carousel.index', compact('carousels'));
+      return view('content.admin.carousel.index', compact('carousels'));
     }
 
     public function formAdd()
     {
-      $data = [];
-      return view('content.carousel.form', compact('data'));
+      $data = request()->all();
+      return view('content.admin.carousel.add', compact('data'));
     }
 
     public function formEdit(string $carouselId)
     {
       $data = Carousel::query()->findOrFail($carouselId);
-      return view('content.carousel.form', compact('data'));
+      return view('content.admin.carousel.edit', compact('data'));
     }
 
     public function store(CarouselRequest $request)
     {
         $title = $request->input('title');
         $status = $request->input('status');
-        $image = $request->file('file');
+        $image = $request->file('image');
         $filepath = null;
         if ($image instanceof UploadedFile) {
           $filename = $image->getFilename();
@@ -49,7 +49,7 @@ class CarouselController extends Controller
           $model = new Carousel();
           $model->fill([
             'title' => $title,
-            'status' => $status,
+            'status' => (int) $status,
             'filepath' => $filepath,
           ])->saveOrFail();
         return redirect()->route('carousel.index');

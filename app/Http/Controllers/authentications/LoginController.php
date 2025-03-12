@@ -21,6 +21,6 @@ class LoginController extends Controller
               'password' => 'Password Invalid.',
             ])->onlyInput('password');
         }
-        return redirect('/');
+        return redirect()->route('carousel.index');
     }
 }

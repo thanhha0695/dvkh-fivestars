@@ -28,13 +28,13 @@ class CarouselRequest extends FormRequest
       'title' => [
         'required',
       ],
-      'file' => [
+      'image' => [
         'required',
-        'file'
+//        'file'
       ],
       'status' => [
         'required',
-        'numeric',
+//        'numeric',
       ],
     ];
   }
