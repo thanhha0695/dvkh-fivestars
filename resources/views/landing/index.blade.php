@@ -256,8 +256,6 @@
     </div>
   </div>
   {{--Footer--}}
-  @include('layouts/sections/navbar/client/footer')
-
   @include('layouts/sections/footer/footer')
 @endsection
 
@@ -310,6 +308,7 @@
       const form = document.getElementById('feedback-form');
       const message = document.getElementById('contact-message');
       const serviceType = document.getElementById('service-type');
+      const navLinks = document.querySelectorAll('.nav-link');
 
       form.addEventListener('submit', async function (e) {
         e.preventDefault();
@@ -366,6 +365,26 @@
           contentSupport.required = true;
         }
       })
+
+      function setActiveLink() {
+        const currentHash = window.location.hash || '#carouselExample';
+        navLinks.forEach(link => {
+          if (link.getAttribute('href') === currentHash) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+      }
+
+      setActiveLink();
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.forEach(l => l.classList.remove('active'));
+          link.classList.add('active');
+        });
+      });
     });
   </script>
 @endsection

@@ -17,22 +17,22 @@
           <span class="text-center mt-3 text-info" style="font-size: 11px;">Chăm sóc khách hàng</span>
         </div>
       </div>
-      <ul class="nav nav-pills nav-justified ms-auto">
+      <ul class="nav nav-underline flex-column flex-md-row ms-md-auto">
         <li class="nav-item">
-          <a class="nav-item nav-link" aria-current="page" href="javascript:void(0)" onclick="scrollToTarget('carouselExample')">Trang chủ</a>
+          <a class="nav-item nav-link" aria-current="page" href="#carouselExample" onclick="scrollToTarget('carouselExample')">Trang chủ</a>
         </li>
         <li class="nav-item">
-          <a class="nav-item nav-link" href="javascript:void(0)" onclick="scrollToTarget('introduce')">Giới thiệu</a>
+          <a class="nav-item nav-link" href="#introduce" onclick="scrollToTarget('introduce')">Giới thiệu</a>
         </li>
         <li class="nav-item">
-          <a class="nav-item nav-link" href="javascript:void(0)" onclick="scrollToTarget('feedback')">Dịch vụ</a>
+          <a class="nav-item nav-link" href="#feedback" onclick="scrollToTarget('feedback')">Dịch vụ</a>
         </li>
         <li class="nav-item">
-          <a class="nav-item nav-link" href="javascript:void(0)" onclick="scrollToTarget('contact')">Liên hệ</a>
+          <a class="nav-item nav-link" href="#contact" onclick="scrollToTarget('contact')">Liên hệ</a>
         </li>
       </ul>
 
-      <div class="d-flex hide-mobile">
+      <div class="d-flex hide-mobile ms-10">
         <div class="navbar-text me-5">
           <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-mail"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg>
           info@forseti.vn
