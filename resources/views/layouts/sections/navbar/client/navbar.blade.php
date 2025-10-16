@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-card fixed-top">
+<nav class="navbar nav-pills nav-fill navbar-expand-lg navbar-light bg-card fixed-top">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-ex-2" aria-controls="navbar-ex-2" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>

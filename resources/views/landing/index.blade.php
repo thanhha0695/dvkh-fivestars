@@ -31,6 +31,10 @@
     [id] {
       scroll-margin-top: 80px;
     }
+
+    .nav-pills .nav-link.active {
+      box-shadow: none;
+    }
   </style>
 @endsection
 
