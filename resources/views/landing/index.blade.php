@@ -147,109 +147,111 @@
       <div class="header-elements d-flex justify-content-center">
         <h4 class="text-uppercase rounded-3 bg-label-info py-2 px-3">Đăng ký - Hỗ trợ dịch vụ</h4>
       </div>
-      <div class="d-flex justify-content-center">
-        <form class="w-50 needs-validation" id="feedback-form" action="#" method="POST" novalidate>
-          <div class="d-none alert" id="contact-message"></div>
-          @csrf
-          <div class="card d-flex justify-content-center">
-            <div class="card-body">
-              <h5>Thông tin dịch vụ</h5>
-              <div class="row mt-5">
-                <label class="form-label">
-                  Loại dịch vụ (<span class="error">*</span>)
-                </label>
-                <select id="service-type" name="type" required>
-                  <option value="">---Chọn dịch vụ---</option>
-                  <option value="1">Đăng ký bảo hành</option>
-                  <option value="2">Bảo hành - Sữa chữa</option>
-                  <option value="3">Hỗ trợ & Giải đáp</option>
-                </select>
-                <div class="invalid-feedback">
-                  Vui lòng chọn dịch vụ.
-                </div>
-              </div>
-              <div class="row mt-5">
-                <label class="form-label">
-                  Sản phẩm (<span class="error">*</span>)
-                </label>
-                <select id="product" name="product_id" required>
-                  <option value="">---Chọn sản phẩm---</option>
-                </select>
-                <div class="invalid-feedback">
-                  Vui lòng chọn sản phẩm.
-                </div>
-              </div>
-              <div class="row mt-5">
-                <label class="form-label">
-                  Ngày mua (<span class="error">*</span>)
-                </label>
-                <div class="col-12">
-                  <input type="date" class="form-control" name="buy_date" placeholder="Ngày mua" required />
+      <div class="d-flex justify-content-center row">
+        <div class="col-12 col-md-6">
+          <form class="needs-validation" id="feedback-form" action="#" method="POST" novalidate>
+            <div class="d-none alert" id="contact-message"></div>
+            @csrf
+            <div class="card d-flex justify-content-center">
+              <div class="card-body">
+                <h5>Thông tin dịch vụ</h5>
+                <div class="row mt-5">
+                  <label class="form-label">
+                    Loại dịch vụ (<span class="error">*</span>)
+                  </label>
+                  <select id="service-type" name="type" required>
+                    <option value="">---Chọn dịch vụ---</option>
+                    <option value="1">Đăng ký bảo hành</option>
+                    <option value="2">Bảo hành - Sữa chữa</option>
+                    <option value="3">Hỗ trợ & Giải đáp</option>
+                  </select>
                   <div class="invalid-feedback">
-                    Vui lòng nhập ngày mua.
+                    Vui lòng chọn dịch vụ.
+                  </div>
+                </div>
+                <div class="row mt-5">
+                  <label class="form-label">
+                    Sản phẩm (<span class="error">*</span>)
+                  </label>
+                  <select id="product" name="product_id" required>
+                    <option value="">---Chọn sản phẩm---</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Vui lòng chọn sản phẩm.
+                  </div>
+                </div>
+                <div class="row mt-5">
+                  <label class="form-label">
+                    Ngày mua (<span class="error">*</span>)
+                  </label>
+                  <div class="col-12">
+                    <input type="date" class="form-control" name="buy_date" placeholder="Ngày mua" required />
+                    <div class="invalid-feedback">
+                      Vui lòng nhập ngày mua.
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="card-body">
-              <h5>Thông tin khách hàng</h5>
-              <div class="row">
-                <label class="form-label">
-                  Họ & tên (<span class="error">*</span>)
-                </label>
-                <div class="col-12">
-                  <input type="text" class="form-control" name="name" placeholder="Nguyễn Văn A" required />
-                  <div class="invalid-feedback">
-                    Vui lòng nhập họ và tên.
+              <div class="card-body">
+                <h5>Thông tin khách hàng</h5>
+                <div class="row">
+                  <label class="form-label">
+                    Họ & tên (<span class="error">*</span>)
+                  </label>
+                  <div class="col-12">
+                    <input type="text" class="form-control" name="name" placeholder="Nguyễn Văn A" required />
+                    <div class="invalid-feedback">
+                      Vui lòng nhập họ và tên.
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="row mt-5">
-                <label class="form-label">
-                  Số điện thoại (<span class="error">*</span>)
-                </label>
-                <div class="col-12">
-                  <input type="number" class="form-control" name="phone" placeholder="Số điện thoại" required />
-                  <div class="invalid-feedback">
-                    Vui lòng nhập số điện thoại.
+                <div class="row mt-5">
+                  <label class="form-label">
+                    Số điện thoại (<span class="error">*</span>)
+                  </label>
+                  <div class="col-12">
+                    <input type="number" class="form-control" name="phone" placeholder="Số điện thoại" required />
+                    <div class="invalid-feedback">
+                      Vui lòng nhập số điện thoại.
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div class="row mt-5">
-                <label class="form-label">
-                  Địa chỉ (<span class="error">*</span>)
-                </label>
-                <div class="col-12">
-                  <input type="text" class="form-control" name="address" placeholder="Số 1, Nguyễn Huy Tưởng, Hà Nội" required />
-                  <div class="invalid-feedback">
-                    Vui lòng nhập địa chỉ.
+                <div class="row mt-5">
+                  <label class="form-label">
+                    Địa chỉ (<span class="error">*</span>)
+                  </label>
+                  <div class="col-12">
+                    <input type="text" class="form-control" name="address" placeholder="Số 1, Nguyễn Huy Tưởng, Hà Nội" required />
+                    <div class="invalid-feedback">
+                      Vui lòng nhập địa chỉ.
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="card-body">
-              <h5>Nội dung hỗ trợ</h5>
-              <div class="row mt-5">
-                <label class="form-label" id="content-support-label">
-                  Nội dung
-                </label>
-                <div class="col-12">
-                  <textarea type="textarea" class="form-control" id="content-support" name="content" placeholder="Nhập nội dung yêu cầu" rows="10"></textarea>
-                  <div class="invalid-feedback">
-                    Vui lòng nhập nội dung.
+              <div class="card-body">
+                <h5>Nội dung hỗ trợ</h5>
+                <div class="row mt-5">
+                  <label class="form-label" id="content-support-label">
+                    Nội dung
+                  </label>
+                  <div class="col-12">
+                    <textarea type="textarea" class="form-control" id="content-support" name="content" placeholder="Nhập nội dung yêu cầu" rows="10"></textarea>
+                    <div class="invalid-feedback">
+                      Vui lòng nhập nội dung.
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="justify-content-center d-flex mb-2">
-                <button type="reset" class="btn btn-secondary me-2">Làm lại</button>
-                <button type="submit" class="btn btn-primary">Gửi yêu cầu</button>
+              <div class="row">
+                <div class="justify-content-center d-flex mb-2">
+                  <button type="reset" class="btn btn-secondary me-2">Làm lại</button>
+                  <button type="submit" class="btn btn-primary">Gửi yêu cầu</button>
+                </div>
               </div>
             </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
   </div>
