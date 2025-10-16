@@ -24,6 +24,7 @@ class LandingPageController extends Controller
         try {
           $response = Http::retry(3, 100)->post($apiUri, $input);
           $status = $response->status();
+          logger()->debug('contact-response', $response->json());
           if ($status !== 200) {
             return response()->json([
               'message' => 'Failed',
