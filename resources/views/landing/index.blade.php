@@ -231,11 +231,11 @@
             <div class="card-body">
               <h5>Nội dung hỗ trợ</h5>
               <div class="row mt-5">
-                <label class="form-label">
-                  Nội dung (<span class="error">*</span>)
+                <label class="form-label" id="content-support-label">
+                  Nội dung
                 </label>
                 <div class="col-12">
-                  <textarea type="textarea" class="form-control" name="content" placeholder="Nhập nội dung yêu cầu" rows="10" required></textarea>
+                  <textarea type="textarea" class="form-control" id="content-support" name="content" placeholder="Nhập nội dung yêu cầu" rows="10"></textarea>
                   <div class="invalid-feedback">
                     Vui lòng nhập nội dung.
                   </div>
@@ -307,12 +307,13 @@
     document.addEventListener('DOMContentLoaded', function () {
       const form = document.getElementById('feedback-form');
       const message = document.getElementById('contact-message');
-
-      message.classList.add('d-none');
+      const serviceType = document.getElementById('service-type');
 
       form.addEventListener('submit', async function (e) {
         e.preventDefault();
 
+        message.classList.add('d-block');
+        message.textContent = '';
         if (!form.checkValidity()) {
           form.classList.add('was-validated');
           return;
@@ -349,6 +350,20 @@
           console.error(error);
         }
       });
+
+      serviceType.addEventListener('change', async function (e) {
+        const type = this.value;
+        const contentSupportLabel = document.getElementById('content-support-label');
+        const contentSupport = document.getElementById('content-support');
+
+        if (parseInt(type) === 1) {
+          contentSupportLabel.textContent = 'Nội dung';
+          contentSupport.required = false;
+        } else {
+          contentSupportLabel.innerHTML = 'Nội dung (<span class="error">*</span>)';
+          contentSupport.required = true;
+        }
+      })
     });
   </script>
 @endsection
