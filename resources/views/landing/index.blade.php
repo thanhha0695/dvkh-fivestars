@@ -259,6 +259,20 @@
       </div>
     </div>
   </div>
+
+  {{--Toast--}}
+  <div class="toast-container position-fixed start-50 translate-middle-x" style="top: 70px;">
+    <div class="toast align-items-center fade text-white bg-success border-0" id="toast-message" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <i class='bx bx-bell me-2'></i>
+        <div class="me-auto fw-semibold">Thông báo</div>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body" id="toast-body">
+        Gửi yêu cầu thành công!
+      </div>
+    </div>
+  </div>
   {{--Footer--}}
   @include('layouts/sections/footer/footer')
 @endsection
@@ -310,15 +324,24 @@
 
     document.addEventListener('DOMContentLoaded', function () {
       const form = document.getElementById('feedback-form');
-      const message = document.getElementById('contact-message');
       const serviceType = document.getElementById('service-type');
       const navLinks = document.querySelectorAll('.nav-link');
+
+      function showToast(message, type = 'success', duration = 3000) {
+        const toastEl = document.getElementById('toast-message');
+        const toastBody = document.getElementById('toast-body');
+
+        toastBody.textContent = message;
+        toastEl.classList.remove('bg-success', 'bg-danger', 'bg-warning');
+        toastEl.classList.add(`bg-${type}`);
+
+        const toast = new bootstrap.Toast(toastEl, { delay: duration });
+        toast.show();
+      }
 
       form.addEventListener('submit', async function (e) {
         e.preventDefault();
 
-        message.classList.add('d-block');
-        message.textContent = '';
         if (!form.checkValidity()) {
           form.classList.add('was-validated');
           return;
@@ -343,15 +366,9 @@
           TomInstanceService.clear();
           TomInstanceProduct.clear();
           form.classList.remove('was-validated');
-          message.classList.remove('d-none');
-          message.classList.remove('alert-danger');
-          message.classList.add('alert-success');
-          message.textContent = "Gửi thành công!";
+          showToast('Gửi yêu cầu thành công!');
         } catch (error) {
-          message.classList.remove('alert-success');
-          message.classList.remove('d-none');
-          message.classList.add('alert-danger');
-          message.textContent = 'Có lỗi xảy ra khi gửi form!';
+          showToast('Có lỗi xảy ra khi gửi form!', 'danger', 8000);
           console.error(error);
         }
       });

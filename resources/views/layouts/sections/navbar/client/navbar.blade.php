@@ -11,7 +11,7 @@
           </a>
         </div>
         <div class="col-10 text-center mt-1">
-          <div class="fw-bold text-info text-uppercase" style="font-size: 12px;">
+          <div class="fw-bold text-info text-uppercase">
             DVKH Five stars
           </div>
           <span class="text-center mt-3 text-info" style="font-size: 11px;">Chăm sóc khách hàng</span>
