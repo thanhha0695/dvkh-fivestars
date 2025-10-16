@@ -15,23 +15,23 @@
         <div>
           <div class="px-5">
             <p>
-              <a href="https://x.com/ForsetiVietnam" class="width-social btn btn-outline-light rounded-circle bg-label-info bg-info text-white">
+              <a style="width: 1px;" target="_blank" href="https://x.com/ForsetiVietnam" class="width-social btn btn-outline-light rounded-circle bg-label-info bg-info text-white">
                 <i class='bx bxl-twitter'></i>
               </a>
               <span class="mt-1">Twitter</span>
             </p>
             <p>
-              <a href="https://www.facebook.com/Forseti.vn" class="width-social btn btn-outline-light rounded-circle text-info bg-label-info"><i class='bx bxl-facebook-circle'></i></a>
+              <a style="width: 1px;" target="_blank" href="https://www.facebook.com/Forseti.vn" class="width-social btn btn-outline-light rounded-circle text-info bg-label-info"><i class='bx bxl-facebook-circle'></i></a>
               <span class="mt-1">Facebook</span>
             </p>
             <p>
-              <a href="https://www.instagram.com/forsetivietnam" class="width-social btn btn-outline-light rounded-circle text-danger bg-label-info">
+              <a style="width: 1px;" target="_blank" href="https://www.instagram.com/forsetivietnam" class="width-social btn btn-outline-light rounded-circle text-danger bg-label-info">
                 <i class='bx bxl-instagram' ></i>
               </a>
               <span class="mt-1">Instagram</span>
             </p>
             <p>
-              <a href="https://www.youtube.com/@forsetivietnam-chuyengialo1854" class="width-social btn btn-outline-light rounded-circle text-danger bg-label-info">
+              <a style="width: 1px;" target="_blank" href="https://www.youtube.com/@forsetivietnam-chuyengialo1854" class="width-social btn btn-outline-light rounded-circle text-danger bg-label-info">
                 <i class='bx bxl-youtube' ></i>
               </a>
               <span class="mt-1">Youtube</span>
